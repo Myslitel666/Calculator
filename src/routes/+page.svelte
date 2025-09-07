@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { ButtonBox, TextField } from "svelte-elegant";
   import { Backspace } from "svelte-elegant/icons-elegant";
+  import { themeStore } from "svelte-elegant/stores";
 
   let isInitialized = false;
   let buttonBoxSize = "85px";
@@ -14,12 +15,24 @@
 <div class="page">
   <TextField width="369px" />
   <div class="buttons">
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>,</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>C</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>
-      <Backspace size="45px" />
+    <ButtonBox
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      color={$themeStore.palette.primary}
+    >
+      C
     </ButtonBox>
-    <ButtonBox fontSize="38px" width={buttonBoxSize} height={buttonBoxSize}>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>
+      <Backspace fill={$themeStore.palette.primary} size="45px" />
+    </ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>,</ButtonBox>
+
+    <ButtonBox
+      fontSize="38px"
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      color={$themeStore.palette.primary}
+    >
       ÷
     </ButtonBox>
   </div>
@@ -27,7 +40,12 @@
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>1</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>2</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>3</ButtonBox>
-    <ButtonBox fontSize="38px" width={buttonBoxSize} height={buttonBoxSize}>
+    <ButtonBox
+      fontSize="38px"
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      color={$themeStore.palette.primary}
+    >
       +
     </ButtonBox>
   </div>
@@ -35,7 +53,12 @@
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>4</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>5</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>6</ButtonBox>
-    <ButtonBox fontSize="38px" width={buttonBoxSize} height={buttonBoxSize}>
+    <ButtonBox
+      fontSize="38px"
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      color={$themeStore.palette.primary}
+    >
       -
     </ButtonBox>
   </div>
@@ -43,7 +66,12 @@
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>7</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>8</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>9</ButtonBox>
-    <ButtonBox fontSize="38px" width={buttonBoxSize} height={buttonBoxSize}>
+    <ButtonBox
+      fontSize="38px"
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      color={$themeStore.palette.primary}
+    >
       ×
     </ButtonBox>
   </div>
