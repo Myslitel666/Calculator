@@ -25,7 +25,7 @@
 <Header>
   <button
     style:margin-left="-2px"
-    style:gap="1px"
+    style:gap="3.5px"
     onclick={() => goto("/settings")}
   >
     <Calculator size="38px" />
