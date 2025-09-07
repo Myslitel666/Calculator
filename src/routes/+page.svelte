@@ -6,6 +6,15 @@
 
   let isInitialized = false;
   let buttonBoxSize = "85px";
+  let expression = "0";
+
+  function inputNumber(number: string) {
+    if (expression === "0") {
+      expression = number;
+    } else {
+      expression += number;
+    }
+  }
 
   onMount(() => {
     isInitialized = true;
@@ -14,6 +23,7 @@
 
 <div class="page">
   <TextField
+    bind:value={expression}
     label="Expression"
     textAlign="right"
     fontSize="20px"
@@ -42,9 +52,27 @@
     </ButtonBox>
   </div>
   <div class="buttons">
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>1</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>2</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>3</ButtonBox>
+    <ButtonBox
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      onClick={() => {
+        inputNumber("1");
+      }}>1</ButtonBox
+    >
+    <ButtonBox
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      onClick={() => {
+        inputNumber("2");
+      }}>2</ButtonBox
+    >
+    <ButtonBox
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      onClick={() => {
+        inputNumber("3");
+      }}>3</ButtonBox
+    >
     <ButtonBox
       fontSize="38px"
       width={buttonBoxSize}
@@ -55,9 +83,27 @@
     </ButtonBox>
   </div>
   <div class="buttons">
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>4</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>5</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>6</ButtonBox>
+    <ButtonBox
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      onClick={() => {
+        inputNumber("4");
+      }}>4</ButtonBox
+    >
+    <ButtonBox
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      onClick={() => {
+        inputNumber("5");
+      }}>5</ButtonBox
+    >
+    <ButtonBox
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      onClick={() => {
+        inputNumber("6");
+      }}>6</ButtonBox
+    >
     <ButtonBox
       fontSize="38px"
       width={buttonBoxSize}
@@ -68,9 +114,27 @@
     </ButtonBox>
   </div>
   <div class="buttons">
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>7</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>8</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>9</ButtonBox>
+    <ButtonBox
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      onClick={() => {
+        inputNumber("7");
+      }}>7</ButtonBox
+    >
+    <ButtonBox
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      onClick={() => {
+        inputNumber("8");
+      }}>8</ButtonBox
+    >
+    <ButtonBox
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      onClick={() => {
+        inputNumber("9");
+      }}>9</ButtonBox
+    >
     <ButtonBox
       fontSize="38px"
       width={buttonBoxSize}
@@ -82,7 +146,13 @@
   </div>
   <div class="buttons">
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>(</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>0</ButtonBox>
+    <ButtonBox
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+      onClick={() => {
+        inputNumber("0");
+      }}>0</ButtonBox
+    >
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>)</ButtonBox>
     <ButtonBox
       isPrimary
