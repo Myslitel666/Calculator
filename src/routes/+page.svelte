@@ -17,33 +17,48 @@
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>,</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>C</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>
-      <Backspace />
+      <Backspace size="45px" />
     </ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>÷</ButtonBox>
+    <ButtonBox fontSize="38px" width={buttonBoxSize} height={buttonBoxSize}>
+      ÷
+    </ButtonBox>
   </div>
   <div class="buttons">
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>1</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>2</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>3</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>+</ButtonBox>
+    <ButtonBox fontSize="38px" width={buttonBoxSize} height={buttonBoxSize}>
+      +
+    </ButtonBox>
   </div>
   <div class="buttons">
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>4</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>5</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>6</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>-</ButtonBox>
+    <ButtonBox fontSize="38px" width={buttonBoxSize} height={buttonBoxSize}>
+      -
+    </ButtonBox>
   </div>
   <div class="buttons">
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>7</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>8</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>9</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>×</ButtonBox>
+    <ButtonBox fontSize="38px" width={buttonBoxSize} height={buttonBoxSize}>
+      ×
+    </ButtonBox>
   </div>
   <div class="buttons">
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>(</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>0</ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>)</ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>=</ButtonBox>
+    <ButtonBox
+      isPrimary
+      fontSize="38px"
+      width={buttonBoxSize}
+      height={buttonBoxSize}
+    >
+      =
+    </ButtonBox>
   </div>
 </div>
 
