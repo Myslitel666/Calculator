@@ -1,9 +1,10 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { ButtonBox } from "svelte-elegant";
+  import { ButtonBox, TextField } from "svelte-elegant";
   import { Backspace } from "svelte-elegant/icons-elegant";
 
   let isInitialized = false;
+  let buttonBoxSize = "85px";
 
   onMount(() => {
     isInitialized = true;
@@ -11,35 +12,38 @@
 </script>
 
 <div class="page">
+  <TextField width="369px" />
   <div class="buttons">
-    <ButtonBox>,</ButtonBox>
-    <ButtonBox>C</ButtonBox>
-    <ButtonBox><Backspace /></ButtonBox>
-    <ButtonBox>÷</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>,</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>C</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>
+      <Backspace />
+    </ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>÷</ButtonBox>
   </div>
   <div class="buttons">
-    <ButtonBox>1</ButtonBox>
-    <ButtonBox>2</ButtonBox>
-    <ButtonBox>3</ButtonBox>
-    <ButtonBox>+</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>1</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>2</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>3</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>+</ButtonBox>
   </div>
   <div class="buttons">
-    <ButtonBox>4</ButtonBox>
-    <ButtonBox>5</ButtonBox>
-    <ButtonBox>6</ButtonBox>
-    <ButtonBox>-</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>4</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>5</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>6</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>-</ButtonBox>
   </div>
   <div class="buttons">
-    <ButtonBox>7</ButtonBox>
-    <ButtonBox>8</ButtonBox>
-    <ButtonBox>9</ButtonBox>
-    <ButtonBox>×</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>7</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>8</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>9</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>×</ButtonBox>
   </div>
   <div class="buttons">
-    <ButtonBox>(</ButtonBox>
-    <ButtonBox>0</ButtonBox>
-    <ButtonBox>)</ButtonBox>
-    <ButtonBox>=</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>(</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>0</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>)</ButtonBox>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>=</ButtonBox>
   </div>
 </div>
 
@@ -50,6 +54,7 @@
   }
 
   .page {
+    margin-top: 10px;
     gap: 10px;
     width: 100vw;
     display: flex;
