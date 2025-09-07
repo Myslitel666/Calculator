@@ -16,6 +16,14 @@
     }
   }
 
+  function backspace() {
+    if (expression.length === 1) {
+      expression = "0";
+    } else {
+      expression = expression.slice(0, -1);
+    }
+  }
+
   onMount(() => {
     isInitialized = true;
   });
@@ -37,7 +45,7 @@
     >
       C
     </ButtonBox>
-    <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>
+    <ButtonBox width={buttonBoxSize} height={buttonBoxSize} onClick={backspace}>
       <Backspace fill={$themeStore.palette.primary} size="45px" />
     </ButtonBox>
     <ButtonBox width={buttonBoxSize} height={buttonBoxSize}>,</ButtonBox>
