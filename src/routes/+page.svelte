@@ -1,116 +1,45 @@
 <script lang="ts">
-  import { themeStore } from "svelte-elegant/stores";
-  import { onMount, onDestroy } from "svelte";
+  import { onMount } from "svelte";
   import { ButtonBox } from "svelte-elegant";
-  import { Play, Pause } from "svelte-elegant/icons-elegant";
+  import { Backspace } from "svelte-elegant/icons-elegant";
 
   let isInitialized = false;
-  let isStopped = true;
-  let rememberedTime = 0;
-  let elapsedTime = 0;
-  const timeStartConst = "00";
-  let minutes = timeStartConst;
-  let seconds = timeStartConst;
-  let ms = timeStartConst;
-  let timerInterval: number | null = null;
-
-  function formatTimeUnits(value: number) {
-    return (value % 60).toString().padStart(2, "0");
-  }
-
-  function initialTimer() {
-    const startTime = Date.now();
-
-    timerInterval = setInterval(() => {
-      elapsedTime = rememberedTime + Date.now() - startTime;
-
-      minutes = formatTimeUnits(Math.floor(elapsedTime / 60000));
-      seconds = formatTimeUnits(Math.floor(elapsedTime / 1000));
-      ms = formatTimeUnits(Math.floor(elapsedTime / 16.666));
-    }, 60); // Интервал не важен, можно 16ms (~60fps)
-  }
-
-  function clearTimer() {
-    if (timerInterval) {
-      clearInterval(timerInterval);
-      timerInterval = null;
-    }
-  }
 
   onMount(() => {
     isInitialized = true;
   });
-
-  // ОЧИЩАЕМ ТАЙМЕР ПРИ УНИЧТОЖЕНИИ КОМПОНЕНТА
-  onDestroy(() => {
-    if (timerInterval) {
-      clearInterval(timerInterval);
-      timerInterval = null;
-    }
-  });
 </script>
 
 <div class="page">
-  <div class="timer" style:color={$themeStore.palette.primary}>
-    {minutes}:{seconds}<span class="ms">{ms}</span>
+  <div class="buttons">
+    <ButtonBox>,</ButtonBox>
+    <ButtonBox>C</ButtonBox>
+    <ButtonBox><Backspace /></ButtonBox>
+    <ButtonBox>÷</ButtonBox>
   </div>
   <div class="buttons">
-    {#if isStopped}
-      <ButtonBox
-        onClick={() => {
-          initialTimer();
-          isStopped = false;
-        }}
-        borderRadius="50%"
-      >
-        <div
-          style:display="flex"
-          style:justify-content="center"
-          style:width="100%"
-          style:margin-left="5px"
-        >
-          <Play size="43px" />
-        </div>
-      </ButtonBox>
-    {:else}
-      <ButtonBox
-        onClick={() => {
-          clearTimer();
-          isStopped = true;
-          rememberedTime = elapsedTime;
-        }}
-        borderRadius="50%"
-      >
-        <div
-          style:display="flex"
-          style:justify-content="center"
-          style:width="100%"
-        >
-          <Pause size="65px" />
-        </div>
-      </ButtonBox>
-    {/if}
-    {#if ms !== timeStartConst || seconds !== timeStartConst || minutes !== timeStartConst}
-      <ButtonBox
-        onClick={() => {
-          clearTimer();
-          minutes = timeStartConst;
-          seconds = timeStartConst;
-          ms = timeStartConst;
-          isStopped = true;
-          elapsedTime = 0;
-          rememberedTime = 0;
-        }}
-        borderRadius="50%"
-      >
-        <div
-          style:width="37px"
-          style:height="37px"
-          style:border-radius="6px"
-          style:background-color="red"
-        ></div>
-      </ButtonBox>
-    {/if}
+    <ButtonBox>1</ButtonBox>
+    <ButtonBox>2</ButtonBox>
+    <ButtonBox>3</ButtonBox>
+    <ButtonBox>+</ButtonBox>
+  </div>
+  <div class="buttons">
+    <ButtonBox>4</ButtonBox>
+    <ButtonBox>5</ButtonBox>
+    <ButtonBox>6</ButtonBox>
+    <ButtonBox>-</ButtonBox>
+  </div>
+  <div class="buttons">
+    <ButtonBox>7</ButtonBox>
+    <ButtonBox>8</ButtonBox>
+    <ButtonBox>9</ButtonBox>
+    <ButtonBox>×</ButtonBox>
+  </div>
+  <div class="buttons">
+    <ButtonBox>(</ButtonBox>
+    <ButtonBox>0</ButtonBox>
+    <ButtonBox>)</ButtonBox>
+    <ButtonBox>=</ButtonBox>
   </div>
 </div>
 
@@ -121,6 +50,7 @@
   }
 
   .page {
+    gap: 10px;
     width: 100vw;
     display: flex;
     justify-content: center;
