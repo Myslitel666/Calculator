@@ -13,7 +13,12 @@
 </script>
 
 <div class="page">
-  <TextField width="369px" />
+  <TextField
+    label="Expression"
+    textAlign="right"
+    fontSize="20px"
+    width="369px"
+  />
   <div class="buttons">
     <ButtonBox
       width={buttonBoxSize}
