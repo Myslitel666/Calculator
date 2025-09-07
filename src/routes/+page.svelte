@@ -42,6 +42,9 @@
       width={buttonBoxSize}
       height={buttonBoxSize}
       color={$themeStore.palette.primary}
+      onClick={() => {
+        expression = "0";
+      }}
     >
       C
     </ButtonBox>
